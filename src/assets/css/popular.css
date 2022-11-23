@@ -1,0 +1,49 @@
+#popular {
+    padding-left: 50px;
+}
+
+#popular h2 {
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+.movie__wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+
+}
+
+.movie__card {
+    background: #181818;
+    padding: 15px 15px;
+    width: 16%;
+
+
+
+}
+
+.movie__card .image__inner {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    height: 300px;
+
+
+}
+
+.movie__card .image__inner img {
+    border-radius: 20px;
+}
+
+.movie__card .movie__title {
+    color: #fff;
+    font-size: 20px;
+}
+
+.movie__card .movie__year {
+    color: #B3B3B3;
+    font-size: 15px;
+}

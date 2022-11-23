@@ -1,0 +1,41 @@
+#category {
+    padding-left: 50px;
+    margin-bottom: 34px;
+}
+
+#category h2 {
+    margin-bottom: 21px;
+    color: #fff;
+}
+
+.category__menu {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.category__menu li {
+    width: 48%;
+    height: 80px;
+    display: inline-block;
+    position: relative;
+    margin-bottom: 10px;
+    background: rgba(84, 84, 84, 0.2);
+    margin-right: 20px;
+}
+
+.category__menu li>img {
+    position: absolute;
+}
+
+.category__menu li a {
+    display: flex;
+    width: 80%;
+    height: 80px;
+    display: inline-block;
+    color: #fff;
+    margin-right: 30px;
+    margin-bottom: 16px;
+    line-height: 80px;
+    margin-left: 90px;
+    font-size: 20px;
+}
