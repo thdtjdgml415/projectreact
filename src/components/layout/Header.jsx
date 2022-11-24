@@ -5,7 +5,9 @@ const Header = ({ onSearch }) => {
   return (
     <div id="header">
       <h1>
-        <img src="../assets/img/logo.png" alt="logo" />
+        <a href="/">
+          <img src="../assets/img/logo.png" alt="logo" />
+        </a>
       </h1>
       <MovieSearch onSearch={onSearch} />
     </div>
