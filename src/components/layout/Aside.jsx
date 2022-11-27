@@ -1,6 +1,6 @@
 import React from "react";
 
-const Aside = () => {
+const Aside = ({ previewMovie }) => {
   return (
     <section id="aside">
       <div className="aside__header">
@@ -20,7 +20,7 @@ const Aside = () => {
         <img src="../reactPoject/img/movieimage.jpg" alt="" />
         <div className="aside__top">
           <div className="aside__desc">
-            <h2>AVATAR - THE WAY OF WATER</h2>
+            <h2></h2>
             <span className="director">
               Director <em>James Cameron</em>
             </span>
