@@ -8,20 +8,21 @@ function Main() {
   const [popular, setPopular] = useState([]);
   const [images, setImages] = useState([]);
   const [filtered, setFiltered] = useState([]);
-  const [activeGenre, setActiveGenre] = useState([]);
+  const [activeGenre, setActiveGenre] = useState();
   // const [movies, setMovies] = useState([]);
 
   useEffect(() => {
     fetchPopular();
   }, []);
 
+  console.log(activeGenre);
   const search = async (query) => {
     await fetch(
       `https://api.themoviedb.org/3/search/movie?api_key=0466376d0c5ab578b755f58c7beec394&language=ko-KOR&page=1&include_adult=false&query=${query}`
     )
       .then((response) => response.json())
       // .then((result) => console.log(result.results))
-      .then((result) => setImages(result.results))
+      .then((result) => setFiltered(result.results))
       .catch((error) => console.log(error));
   };
 
@@ -31,6 +32,7 @@ function Main() {
     );
     const movies = await data.json();
     setPopular(movies.results);
+
     setFiltered(movies.results);
   };
 
