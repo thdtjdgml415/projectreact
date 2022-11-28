@@ -20,7 +20,6 @@ const Aside = ({ previewMovie }) => {
         <img src="../reactPoject/img/movieimage.jpg" alt="" />
         <div className="aside__top">
           <div className="aside__desc">
-            <h2></h2>
             <span className="director">
               Director <em>James Cameron</em>
             </span>

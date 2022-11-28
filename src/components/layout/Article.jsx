@@ -1,28 +1,25 @@
-import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
-import { API_KEY, API_URL, IMAGE_BASE_URL } from "../../utils/Config";
-const Popular = ({ images, setSelectMovie }) => {
-  const onclick = () => {
-    setSelectMovie(images.id);
-  };
-
+import { IMAGE_BASE_URL } from "../../utils/Config";
+const Popular = ({ movie }) => {
   return (
     <div className="movie__card">
       <div className="image__inner">
-        <img
-          src={`${IMAGE_BASE_URL}w300/${images.poster_path}`}
-          alt={`${images.id}`}
-          onClick={onclick}
-        />
+        <Link to={`/movie/${movie.id}`}>
+          <img
+            src={`${IMAGE_BASE_URL}w300/${movie.poster_path}`}
+            alt={`${movie.id}`}
+          />
+        </Link>
       </div>
-      <p className="movie__title">{images.title}</p>
-      <em className="movie__year">{images.release_date}</em>
+      <p className="movie__title">{movie.title}</p>
+      <em className="movie__year">{movie.release_date}</em>
     </div>
   );
 };
 
 function Article({ images }) {
-  const [selectMovie, setSelectMovie] = useState("null");
+  // const [selectMovie, setSelectMovie] = useState("null");
   // const [previewMovie, setpreviewMovie] = useState("null");
 
   // 영화 선택 불러오는 api
@@ -42,7 +39,7 @@ function Article({ images }) {
       <h2>What's Popular</h2>
       <div className="movie__wrap">
         {images.map((image, idx) => (
-          <Popular setSelectMovie={setSelectMovie} images={image} key={idx} />
+          <Popular movie={image} key={idx} />
         ))}
       </div>
     </section>
