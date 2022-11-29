@@ -3,7 +3,6 @@ import { API_KEY, API_URL, IMAGE_BASE_URL } from "../../utils/Config";
 import { useParams } from "react-router-dom";
 import Moviestatistics from "./Moviestatistics.jsx";
 import ReactPlayer from "react-player";
-import MoviePlayer from "./MoviePlayer";
 
 function MovieDetails() {
   const { movieId } = useParams();
@@ -22,6 +21,18 @@ function MovieDetails() {
       });
   }, []);
 
+  useEffect(() => {
+    // let movieimage = `${API_URL}movie/${movieId}/images?api_key=${API_KEY}&language=en-US`;
+    // let movieCrew = `${API_URL}movie/${movieId}/credits?api_key=${API_KEY}`;
+    let movieinfo1 = `${API_URL}movie/${movieId}/videos?api_key=${API_KEY}&language=ko-KOR`;
+    fetch(movieinfo1)
+      .then((response) => response.json())
+      .then((response) => {
+        setMoviess(response.results[0]);
+        console.log(movieinfo1);
+      });
+  }, []);
+
   return (
     <div>
       {/* header */}
@@ -35,9 +46,11 @@ function MovieDetails() {
         <div className="detail__title">{Movies.title}</div>
         <div className="detail__desc">{Movies.overview}</div>
         <div className="play">
-          <MoviePlayer>
-            <ReactPlayer movieId={movieId} Movies={Movies} />
-          </MoviePlayer>
+          {Movies.name}
+          <ReactPlayer
+            url={`https://www.youtube.com/watch?v=${Moviess.key}`}
+            controls
+          />
         </div>
 
         {/* movie info */}

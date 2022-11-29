@@ -6,26 +6,28 @@ function Moviestatistics({ Movieinfo }) {
   console.log(Movieinfo);
   return (
     <div className="static__inner">
-      <Descriptions title="Movie Info" bordered>
-        <Descriptions.Item label="Title">{Movieinfo.title}</Descriptions.Item>
-        <Descriptions.Item label="release_date">
+      <Descriptions title="영화 정보" bordered>
+        <Descriptions.Item label="영화 제목">
+          {Movieinfo.title}
+        </Descriptions.Item>
+        <Descriptions.Item label="원제">
+          {Movieinfo.original_title}
+        </Descriptions.Item>
+        <Descriptions.Item label="개봉일">
           {Movieinfo.release_date}
         </Descriptions.Item>
-        <Descriptions.Item label="revenue">
-          {Movieinfo.revenue}
+        <Descriptions.Item label="수익">${Movieinfo.revenue}</Descriptions.Item>
+        <Descriptions.Item label="러닝타임">
+          {Movieinfo.runtime}분
         </Descriptions.Item>
-        <Descriptions.Item label="runtime">
-          {Movieinfo.runtime}
+        <Descriptions.Item label="평점" span={2}>
+          {Movieinfo.vote_average}점
         </Descriptions.Item>
-        <Descriptions.Item label="vote_average" span={2}>
-          {Movieinfo.vote_average}
+        <Descriptions.Item label="평점투표횟수">
+          {Movieinfo.vote_count}번
         </Descriptions.Item>
-        <Descriptions.Item label="vote_count">
-          {Movieinfo.vote_count}
-        </Descriptions.Item>
-        <Descriptions.Item label="status">{Movieinfo.status}</Descriptions.Item>
-        <Descriptions.Item label="popularity">
-          {Movieinfo.popularity}
+        <Descriptions.Item label="개봉유무">
+          {Movieinfo.status}
         </Descriptions.Item>
       </Descriptions>
     </div>
