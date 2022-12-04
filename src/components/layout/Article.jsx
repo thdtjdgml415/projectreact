@@ -22,7 +22,7 @@ function Article({ filtered }) {
   // console.log(filtered);
   return (
     <section id="popular">
-      <h2>What's Popular</h2>
+      <h2>What's</h2>
       <div className="movie__wrap">
         {filtered?.map((image, idx) => (
           <Popular movie={image} key={idx} />

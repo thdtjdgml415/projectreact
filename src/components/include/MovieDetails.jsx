@@ -67,32 +67,39 @@ function MovieDetails() {
             }}
           ></div>
         }
-
-        <div className="detail__poster">
-          <img
-            src={`${IMAGE_BASE_URL}w342/${Movies.poster_path}`}
-            alt={`${Movies.id}`}
-          />
-        </div>
-        <div className="detail__left">
-          <div className="detail__title">{Movies.title}</div>
-          <div className="detail__desc">{Movies.overview}</div>
-          <button className="btn-primary" onClick={() => setShow(true)}>
-            예고편보기
-          </button>
-          <div className="play">
-            {Movies && (
-              <Modal show={show} onClose={() => setShow(false)} video={Video} />
-            )}
+        <div className="detail__inner">
+          <div className="detail__poster">
+            <img
+              src={`${IMAGE_BASE_URL}w342/${Movies.poster_path}`}
+              alt={`${Movies.id}`}
+            />
           </div>
-          <button className="detail__more" onClick={onSubmit}>
-            더보기
-          </button>
-          {isClick && <Moviestatistics Movieinfo={Movies} />}
-          {/* movie info */}
-          <br />
-          {/* actor grid */}
-          <MovieActor Actors={Actor} />
+          <div className="detail__left">
+            <div className="detail__title">{Movies.title}</div>
+            <div className="detail__desc__inner">
+              <div className="detail__desc">{Movies.overview}</div>
+            </div>
+            <button className="btn-primary" onClick={() => setShow(true)}>
+              예고편보기
+            </button>
+            <div className="play">
+              {Movies && (
+                <Modal
+                  show={show}
+                  onClose={() => setShow(false)}
+                  video={Video}
+                />
+              )}
+            </div>
+            <button className="detail__more" onClick={onSubmit}>
+              더보기
+            </button>
+            {isClick && <Moviestatistics Movieinfo={Movies} />}
+            {/* movie info */}
+            <br />
+            {/* actor grid */}
+            <MovieActor Actors={Actor} />
+          </div>
         </div>
       </div>
     </div>
