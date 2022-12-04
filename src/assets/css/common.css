@@ -5,27 +5,23 @@
 }
 
 .left {
-    width: 72%;
-    position: relative;
+    width: 100%;
 }
 
-button {
-    display: block;
-    width: 200px;
-    height: 50px;
-    position: absolute;
-    left: 50px;
-    bottom: 0;
-    background: #fff;
-
-}
-
-.left__inner {
+.left .more {
+    align-items: center;
+    font-size: 1vw;
     display: flex;
+    justify-content: center;
+    padding: 1vw;
+    border-radius: 50%;
+    z-index: 100;
+    margin: 2vw 0 2vw 0;
+    transform: translateX(43vw);
+    background: rgba(255, 255, 255, 0.677);
 }
 
-#aside {
+/* #aside {
     width: 28%;
-    background: #ccc;
-    float: right;
-}
+    background: #cc
+  } */

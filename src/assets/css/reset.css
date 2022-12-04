@@ -59,7 +59,8 @@ textarea {
 }
 
 * {
-    font-family: 'LINESeedKR';
+    font-family: "LINESeedKR";
+    overscroll-behavior: none;
 }
 
 /* 가로모드 초기화 */

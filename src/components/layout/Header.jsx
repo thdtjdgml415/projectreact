@@ -1,6 +1,5 @@
 import React from "react";
 import MovieSearch from "../include/MovieSearch";
-
 const Header = ({ onSearch }) => {
   return (
     <div id="header">
@@ -13,5 +12,4 @@ const Header = ({ onSearch }) => {
     </div>
   );
 };
-
 export default Header;
